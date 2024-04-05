@@ -1,0 +1,7 @@
+<HTML>
+<HEAD><TITLE>Visitors</TITLE></HEAD>
+<FRAMESET COLS="100%,*">
+  <FRAME SRC="/hck/VisitorsLeft.html" NAME="f1">
+  <FRAME SRC="/hck/sound.au" NAME="f2">
+</FRAMESET>
+</HTML>

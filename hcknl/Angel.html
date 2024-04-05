@@ -1,0 +1,91 @@
+<HTML> 
+<HEAD><TITLE>Health Check Login</TITLE></HEAD> 
+<SCRIPT LANGUAGE='JavaScript'> 
+function checkFields(form) { 
+	if ( ("" != form.logName.value) && ("" != form.password.value) ) 
+		form.submit(); 
+	else 
+		alert('Enter values in both fields ...'); 
+} 
+</SCRIPT> 
+<BODY BGCOLOR='khaki'> 
+<font Color='#850a0a'> 
+ 
+<H1 align=center> 
+   <FONT Color='#1C5540' SIZE=6> 
+      Welcome to Your Health Check  
+   </FONT> 
+</H1> 
+ 
+<H2 align=center> 
+   <FONT Color='0000FF' SIZE=5> 
+       If you have a life threatening condition: 
+       Call 911 or go to the nearest hospital. 
+   </FONT> 
+</H2> 
+ 
+<H3><i>  The medical information in this system will always be incomplete, and 
+  while assembled with great care it remains subjective. 
+  A symptom of a disease may not be manifest or a symptom may be 
+  manifest that is unrelated with a disease, etc.<br> 
+  You and only you are FULLY responsible for any conclusion you draw from the 
+  presented information!!<br> 
+  Login only provided you fully agree with the above statements.</i></H3> 
+ 
+<b> 
+<FORM method=post ACTION='/hck/servlet/patient.AngelLogin'> 
+  Login name: <INPUT TYPE=TEXTAREA SIZE=10 NAME=logName> 
+  Password: <INPUT TYPE=PASSWORD SIZE=10 NAME=password> 
+   <A href='/hck/servlet/su.CreateAnonymousAccount'>  
+  First time visitor: Create first an anonymous account</A> |  
+   <A href='/hck/help.html'>HELP </A> 
+ 
+<p> 
+<input TYPE='button' VALUE='Submit' onClick='checkFields(this.form)'> 
+<input TYPE='button' VALUE='Back/Cancel' onClick='history.back()'> 
+<INPUT TYPE='button' VALUE='Home' onClick='location="/hck/index.html"'> 
+</FORM> 
+<SCRIPT LANGUAGE='JavaScript'> document.forms[0].logName.focus(); </SCRIPT> 
+<hr> 
+ 
+<A href='/hck/servlet/users.ChangePassword0?user=user'> 
+Change my password</A> |  
+<A href='/hck/faq.html'>  
+I want to know more about this site</A> | 
+<A href='/hck/help.html'> 
+HELP</A> 
+ 
+ 
+<hr> 
+<i>Warnings:</i><br> 
+** Do NOT log in as another person.  You will get erroneous results and 
+you will mess up the history of that other person.<br> 
+ 
+** If you you leave the site for more than 60 seconds, you will be 
+logged out automaticly.<br> 
+ 
+<FONT color='FF0000'> 
+** POPUPS::: This site USES popups. No, NOT for ads, but to explain, 
+for example, a medical term.</FONT> <i> 
+Tell your browser to accept popups from this site.</i> 
+There are also popup links into Yahoo to further explain medical terms, 
+which may in turn create whatever popups.<br> 
+ 
+** Your browser (or you) must accept a (transient) cookie, 
+and must have Javascript and Java enabled.<br> 
+  
+<FONT color='FF0000'> 
+** We found that the following browsers are 'broken': 
+<A href='#1' name='1' onClick= 
+   "alert('IE5.5 generates erroneous pop-up windows')"> IE5.5</A> 
+and  
+<A href='#2' name='2' onClick= 
+   "alert('Netscape6.2 causes a logout if the user stays on a page longer than 60 seconds')"> 
+Netscape6.2</A>.</FONT> 
+The browsers IE6.0, Netscape7 and 4.08 and likely many others DO work. 
+Netscape 7.1 does not handle blinking properly ... 
+ 
+</b> 
+</font> 
+</BODY> 
+</HTML> 

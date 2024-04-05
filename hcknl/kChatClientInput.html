@@ -1,0 +1,26 @@
+<HTML> 
+<script LANGUAGE='JavaScript'> 
+function checkInput(form) { 
+        if ( '' ==  form.clientString.value )  
+		alert('Please provide input ...'); 
+	else 
+	        form.submit(); 
+} 
+function terminate(form) { 
+       form.clientString.value = '**ClientTerminate**'; 
+       form.submit(); 
+} 
+</script> 
+<BODY BGCOLOR='bbbbbb'> 
+<FORM ACTION='/hcknl/servlet/patient.KChatClientInput'> 
+<INPUT TYPE='text' NAME='clientString' VALUE='' SIZE=80> 
+<p> 
+<INPUT TYPE='button' VALUE='Send to CallCenter'  
+	onClick='checkInput(this.form)'> 
+<INPUT TYPE='button' VALUE='Terminate Chat Session/Cancel'  
+        onClick='terminate(this.form)'> 
+</FORM> 
+<SCRIPT LANGUAGE='JavaScript'> document.forms[0].clientString.focus(); </SCRIPT> 
+ 
+</BODY> 
+</HTML> 

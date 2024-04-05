@@ -1,0 +1,271 @@
+<HTML> 
+<HEAD> 
+   <TITLE> 
+Set up new anonymous user 
+   </TITLE> 
+</HEAD> 
+<script LANGUAGE='JavaScript'> 
+ 
+function trim(inString) { 
+  var lng = inString.length;  
+  if (0 == lng) return inString; 
+  if (' ' == inString.charAt(0) ) 
+     return trim(inString.substring(1,lng)); 
+  lng--; 
+  if (' ' == inString.charAt(lng) ) 
+     return trim(inString.substring(0,lng)); 
+  return inString; 
+} 
+ 
+function isDigit(aChar) { 
+   var refString='1234567890'; 
+   return refString.indexOf(aChar); 
+} 
+ 
+function isLowercase(aChar) { 
+   var refString='abcdefghijklmnopqrstuvwxyz'; 
+   return refString.indexOf(aChar); 
+} 
+ 
+function isUppercase(aChar) { 
+   var refString='ABCDEFGHIJKLMNOPQRSTUVWXYZ'; 
+   return refString.indexOf(aChar); 
+} 
+ 
+function isLetter(aChar) { 
+   var out = isLowercase(aChar); 
+   if ( 0 <= out ) return out; 
+   return isUppercase(aChar); 
+} 
+ 
+function isDigitString (inString) { 
+   if (0==inString.length) return (false); 
+   for (count=0; count<inString.length; count++) { 
+      tempChar = inString.charAt(count); 
+      if (-1 == isDigit(tempChar)) return (false); 
+   } 
+   return (true); 
+} 
+ 
+function isLetterString (inString) { 
+   if (0==inString.length) return (false); 
+   for (count=0; count<inString.length; count++) { 
+      tempChar = inString.charAt(count); 
+      if (-1 == isLetter(tempChar)) return (false); 
+   } 
+   return (true); 
+} 
+ 
+function isLetterOrDigitString(inString) { 
+   if (0==inString.length) return (false); 
+   for (count=0; count<inString.length; count++) { 
+      tempChar = inString.charAt(count); 
+      if (-1 == isLetter(tempChar) && 
+          -1 == isDigit(tempChar)) return (false); 
+   } 
+   return (true); 
+} 
+ 
+function isLetterOrDigitOrSpaceString(inString) { 
+   if (0==inString.length) return (false); 
+   for (count=0; count<inString.length; count++) { 
+      tempChar = inString.charAt(count); 
+      if (-1 == isLetter(tempChar) && 
+          -1 == isDigit(tempChar) && ' ' != tempChar) return (false); 
+   } 
+   return (true); 
+} 
+ 
+function isLetterOrSpaceString(inString) { 
+   if (0==inString.length) return (false); 
+   for (count=0; count<inString.length; count++) { 
+      tempChar = inString.charAt(count); 
+      if (-1 == isLetter(tempChar) && ' ' != tempChar) return (false); 
+   } 
+   return (true); 
+} 
+ 
+ 
+ 
+function checkFields(form) { 
+  val2 = form.logName.value; 
+  val3 = trim(val2); 
+  if ( val2 != val3 ) { val2 = val3; form.logName.value = val2; } 
+  out = isLetterOrDigitString(val2); 
+  if ( 1 != out ) { alert('Enter or fix log name/ only letters or digits ...'); 
+  return; }; 
+ 
+  val2 = form.password.value; 
+  val3 = trim(val2); 
+  if ( val2 != val3 ) { val2 = val3; form.password.value = val2; } 
+  out = isLetterOrDigitString(val2); 
+  if ( 1 != out ) { alert('Enter or fix password ...'); return; }; 
+ 
+  val2 = form.year.value; 
+  if ( 4 != val2.length ) { alert('Enter year of birth ...'); return; }; 
+  out = isDigitString(val2); 
+  if ( 1 != out  ) { alert('Enter year of birth ...'); return; }; 
+  number = parseInt(val2); 
+  if ( number < 1900 || 2010 < number ) { alert('Enter year of birth ...'); return; }; 
+ 
+  val2 = form.height.value; 
+  if ( 2 != val2.length ) { alert('Enter heigth ...'); return; }; 
+  out = isDigitString(val2); 
+  if ( 1 != out  ) { alert('Enter heigth ...'); return; }; 
+  number = parseInt(val2); 
+  if ( number < 12 || 96 < number ) { alert('Enter heigth ...'); return; }; 
+ 
+  val2 = form.weight.value; 
+  out = isDigitString(val2); 
+  if ( 1 != out  ) { alert('Enter weigth ...'); return; }; 
+  number = parseInt(val2); 
+  if ( number < 2 || 500 < number ) { alert('Enter weigth ...'); return; }; 
+ 
+  form.submit(); 
+} 
+</script> 
+ 
+<BODY BGCOLOR='khaki'> 
+<font Color='#850a0a'> 
+ 
+<H1 align=center> 
+   <FONT Color='#1C5540' SIZE=4> 
+OK, Lets Setup a New Account 
+   </FONT> 
+</H1> 
+ 
+<FORM METHOD='post' ACTION='/hcknl/servlet/patient.Setup'> 
+<TABLE> 
+<TR> 
+  <TD><b>To access your data:</b></TD> 
+</TR> 
+<TR> 
+   <TD>Identification:</TD> 
+   <TD> 
+       Login name: <INPUT TYPE='TEXTAREA' SIZE=10 NAME='logName'> 
+       Password: <INPUT TYPE='PASSWORD' SIZE=10 NAME='password'> 
+   </TD> 
+</TR> 
+ 
+<TR> 
+  <TD><b>Some Details:</b></TD> 
+</TR> 
+<TR> 
+   <TD>Gender:</TD> 
+   <TD> 
+       <SELECT NAME='gender'> 
+           <OPTION VALUE='female' SELECTED>female 
+           <OPTION VALUE='male'>male 
+       </SELECT>    
+   </TD> 
+</TR> 
+<TR> 
+   <TD>Date of Birth:</TD> 
+   <TD> 
+       Year: <INPUT TYPE='TEXTAREA' SIZE=4 NAME='year' Value='yyyy'> 
+       Month: 
+       <SELECT NAME=month> 
+           <OPTION VALUE='Jan0' SELECTED> Jan 
+           <OPTION VALUE='Feb1'> Feb 
+           <OPTION VALUE='Mar2'> Mar 
+           <OPTION VALUE='Apr3'> Apr 
+           <OPTION VALUE='May4'> May 
+           <OPTION VALUE='Jun5'> Jun 
+           <OPTION VALUE='Jul6'> Jul 
+           <OPTION VALUE='Aug7'> Aug 
+           <OPTION VALUE='Sep8'> Sep 
+           <OPTION VALUE='Oct9'> Oct 
+           <OPTION VALUE='Nov10'> Nov 
+           <OPTION VALUE='Dec11'> Dec 
+       </SELECT>    
+       Date: 
+       <SELECT NAME=day> 
+           <OPTION VALUE=1 SELECTED> 1 
+           <OPTION VALUE=2> 2 
+           <OPTION VALUE=3> 3 
+           <OPTION VALUE=4> 4 
+           <OPTION VALUE=5> 5 
+           <OPTION VALUE=6> 6 
+           <OPTION VALUE=7> 7 
+           <OPTION VALUE=8> 8 
+           <OPTION VALUE=9> 9 
+           <OPTION VALUE=10> 10 
+           <OPTION VALUE=11> 11 
+           <OPTION VALUE=12> 12 
+           <OPTION VALUE=13> 13 
+           <OPTION VALUE=14> 14 
+           <OPTION VALUE=15> 15 
+           <OPTION VALUE=16> 16 
+           <OPTION VALUE=17> 17 
+           <OPTION VALUE=18> 18 
+           <OPTION VALUE=19> 19 
+           <OPTION VALUE=20> 20 
+           <OPTION VALUE=21> 21 
+           <OPTION VALUE=22> 22 
+           <OPTION VALUE=23> 23 
+           <OPTION VALUE=24> 24 
+           <OPTION VALUE=25> 25 
+           <OPTION VALUE=26> 26 
+           <OPTION VALUE=27> 27 
+           <OPTION VALUE=28> 28 
+           <OPTION VALUE=29> 29 
+           <OPTION VALUE=30> 30 
+           <OPTION VALUE=31> 31 
+       </SELECT>    
+   </TD> 
+</TR> 
+<TR> 
+   <TD>Population group:</TD> 
+   <TD> 
+       <SELECT NAME='race'>    
+           <OPTION VALUE='africanAmerican' SELECTED> african american  
+           <OPTION VALUE='asian' SELECTED> asian  
+           <OPTION VALUE='caucasian'> caucasian  
+           <OPTION VALUE='chineseAmerican'> chinese american 
+           <OPTION VALUE='hispanic'> hispanic/ latino   
+           <OPTION VALUE='indianAmerican'> indian american 
+           <OPTION VALUE='japaneseAmerican'> japanese american 
+           <OPTION VALUE='jewishAmerican'> jewish american 
+           <OPTION VALUE='nativeAmerican'> native american  
+       </SELECT>    
+   </TD> 
+</TR> 
+ 
+<TR> 
+  <TD>Sexual orientation:</TD> 
+  <TD>  
+       <SELECT NAME='sexPartner'> 
+           <OPTION VALUE='hetero' SELECTED>opposite sex 
+           <OPTION VALUE='same'>same sex 
+           <OPTION VALUE='bi'>both sexes 
+           <OPTION VALUE='none'>none/ abstain 
+       </SELECT>    
+  </TD> 
+</TR> 
+<TR> 
+  <TD>Miscellania:</TD> 
+  <TD>  
+       Height(inches): <INPUT TYPE='TEXTAREA' SIZE=3 NAME='height'> 
+       Weight(lbs): <INPUT TYPE='TEXTAREA' SIZE=3 NAME='weight'> 
+       Blood Group: 
+       <SELECT name='bloodGroup'> 
+           <OPTION VALUE='unknown' SELECTED>un-known 
+           <OPTION VALUE='O'> O 
+           <OPTION VALUE='A'> A 
+           <OPTION VALUE='B'> B 
+           <OPTION VALUE='AB'> AB 
+       </SELECT>    
+  </TD> 
+</TR> 
+</TABLE> 
+ 
+ 
+<hr> 
+Please check your data before submitting! 
+<input TYPE='button' VALUE='Submit' onClick='checkFields(this.form)'> 
+</FORM> 
+<SCRIPT LANGUAGE='JavaScript'> document.forms[0].logName.focus(); </SCRIPT> 
+ 
+</font> 
+</BODY> 
+</HTML> 

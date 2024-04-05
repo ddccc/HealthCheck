@@ -1,0 +1,219 @@
+<HTML> 
+<HEAD> 
+   <TITLE> 
+Set up new user 3 
+   </TITLE> 
+</HEAD> 
+<script LANGUAGE='JavaScript'> 
+function isNumberString (InString) { 
+   if (0==InString.length) return (false); 
+   var RefString='1234567890'; 
+   for (Count=0; Count<InString.length; Count++) { 
+      TempChar = InString.charAt(Count); 
+      if (-1 == RefString.indexOf(TempChar)) return (false); 
+   } 
+   return (true); 
+} 
+function checkFields(form) { 
+   lng = form.illnesses.length; 
+   // alert('lng: ' + lng); 
+   for (i = 0; i<lng; i++) {  
+      if ( form.illnesses[i].checked ) { 
+         val = form.illnesses[i].value; 
+	 // alert('val: ' + val + ' i: ' + i); 
+	 expr = 'form.' + val; 
+	 //alert('expr: ' + expr); 
+	 val2 = (eval(expr)).value; 
+	 // alert('val2: ' + val2); 
+	 if ( 4 != val2.length ) { 
+	    alert('Provide year for: ' + val); 
+	    return; 
+	 } 
+	 isNumber = isNumberString(val2); 
+	 if ( 1 != isNumber  ) { 
+	    alert('Provide year for: ' + val); 
+	    return; 
+	 } 
+	 number = parseInt(val2); 
+	 if ( number < 1900 || 2010 < number ) { 
+	    alert('Provide year for: ' + val); 
+	    return; 
+	 } 
+      }  
+  }  
+  form.submit(); 
+} 
+</script> 
+ 
+<BODY BGCOLOR='khaki'> 
+<font Color='#850a0a'> 
+ 
+<H1 align=center> 
+   <FONT Color='#1C5540' SIZE=4> 
+OK, Here the 3rd and Last Set of Questions 
+   </FONT> 
+</H1> 
+ 
+<FORM METHOD='post' NAME='diseases' ACTION='/hck/servlet/patient.Setup3'> 
+<TABLE BORDER> 
+<TR> 
+  <TD><b>Illnesses:</b></TD> 
+</TR> 
+<TR> 
+  <TD COLSPAN=3>Check which apply & add year of illness</TD> 
+</TR> 
+<TR><TD>asthma / reversible lung disease: narrowing of the airways due to inflammation: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='asthma'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='asthma' VALUE=''> 
+  </TD></TR> 
+<TR><TD>cystitis / infection of the bladder: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='cystitis'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='cystitis' VALUE=''> 
+  </TD></TR> 
+<TR><TD>cancer / impaired enlarged disfunctional cells that divide more rapidly than normal : 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='cancer'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='cancer' VALUE=''> 
+  </TD></TR> 
+<TR><TD>chicken pox / pneumonia caused by chickenpox viral infection: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='chickenpox'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='chickenpox' VALUE=''> 
+  </TD></TR> 
+<TR><TD>diabetes / a family of diseases defined by increased urine production: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='diabetes'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='diabetes' VALUE=''> 
+  </TD></TR> 
+<TR><TD>emphysema / irreversible enlargement of airspace in the lungs resulting in decreased elastic recoil: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='emphysema'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='emphysema' VALUE=''> 
+  </TD></TR> 
+<TR><TD>cholelithiasis / gallstone in the gallbladder: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='cholelithiasis'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='cholelithiasis' VALUE=''> 
+  </TD></TR> 
+<TR><TD>glaucoma / abnormal high pressure inside the eye that can damage the optic nerve: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='glaucoma'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='glaucoma' VALUE=''> 
+  </TD></TR> 
+<TR><TD>gonorrhea / infection of the genitouri tract: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='gonorrhea'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='gonorrhea' VALUE=''> 
+  </TD></TR> 
+<TR><TD>gout / metabolic deficiency causing urate deposists producing painful arthritis joints: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='gout'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='gout' VALUE=''> 
+  </TD></TR> 
+<TR><TD>myocardial infarction = heart attack / impaired blood flow through the heart arteries: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='myocardialInfarction'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='myocardialInfarction' VALUE=''> 
+  </TD></TR> 
+<TR><TD>hepatitis / liver disease with viral and non-viral variants: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='hepatitis'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='hepatitis' VALUE=''> 
+  </TD></TR> 
+<TR><TD>pyelonephritis / bacterial infection of the kidneys: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='pyelonephritis'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='pyelonephritis' VALUE=''> 
+  </TD></TR> 
+<TR><TD>renal calculi / kidney stones: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='renalCalculi'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='renalCalculi' VALUE=''> 
+  </TD></TR> 
+<TR><TD>malaria / acute infection by a protozoa of the genus Plasmodicum, which is transmitted by mosquitos: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='malaria'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='malaria' VALUE=''> 
+  </TD></TR> 
+<TR><TD>measles / pneumonia caused by measles viral infection: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='measles'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='measles' VALUE=''> 
+  </TD></TR> 
+<TR><TD>rubella / German measles / acute infection by the rubella virus, which is mildly contagious: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='rubella'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='rubella' VALUE=''> 
+  </TD></TR> 
+<TR><TD>Epstein-Barr Disease / mononucleosis / infection by Epstein-Barr virus: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='epsteinBarrDisease'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='epsteinBarrDisease' VALUE=''> 
+  </TD></TR> 
+<TR><TD>mumps / infection by paramyxovirus: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='mumps'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='mumps' VALUE=''> 
+  </TD></TR> 
+<TR><TD>pneumonia / pneumonia = inflammation of the lungs: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='pneumonia'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='pneumonia' VALUE=''> 
+  </TD></TR> 
+<TR><TD>rheumatic fever / a streptococcal infection usually affecting joints with potential impact on the heart: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='rheumaticFever'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='rheumaticFever' VALUE=''> 
+  </TD></TR> 
+<TR><TD>cerebrovascular accident / (stroke) impairment of one or more brain blood vessels : 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='cerebrovascularAccident'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='cerebrovascularAccident' VALUE=''> 
+  </TD></TR> 
+<TR><TD>syphilis / infection by the spirochete treponema pallidum: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='syphilis'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='syphilis' VALUE=''> 
+  </TD></TR> 
+<TR><TD>tuberculosis / infection by tuberculosis mycobacterium: 
+    </TD><TD> <INPUT TYPE='CHECKBOX' NAME='illnesses' 
+       VALUE='tuberculosis'> 
+  </TD><TD> 
+       <INPUT TYPE='TEXTAREA' SIZE=4 NAME='tuberculosis' VALUE=''> 
+  </TD></TR> 
+ 
+</TABLE> 
+ 
+<hr> 
+Please check your data before submitting! 
+<input TYPE='button' VALUE='Submit' onClick='checkFields(this.form)'> 
+</FORM> 
+ 
+</font> 
+</BODY> 
+</HTML> 

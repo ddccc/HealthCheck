@@ -1,0 +1,68 @@
+<html> 
+<head> 
+   <title>Weight Management Program</title> 
+<link rel="stylesheet" type="text/css" href="/hck/hckStyle.css" /><link rel="shortcut icon" href="/hck/favicon.ico" type="image/x-icon" /><script language= "JavaScript"> 
+function checkField (form) { 
+        TestVar = isNumberString(form.myWeight.value) 
+	if (TestVar == 1) form.submit(); else 
+	alert('Please provide a number!');  
+	} 
+function isNumberString (InString) { 
+   if (InString.length==0) return (false); 
+   var RefString='1234567890'; 
+   for (Count=0; Count<InString.length; Count++) { 
+      TempChar = InString.charAt(Count); 
+      if (-1 == RefString.indexOf(TempChar)) return (false); 
+   } 
+   return (true); 
+} 
+</script> 
+</head> 
+ 
+<body> 
+<font color="#850a0a"> 
+ 
+<span id="toolTipBox" width="200"></span> 
+<script language="JavaScript"> 
+function myAlert(x, y, timeOut, txt) { 
+    document.getElementById('toolTipBox').style.top = y + "px"; 
+    document.getElementById('toolTipBox').style.left = x + "px"; 
+    document.getElementById('toolTipBox').innerHTML= txt; 
+    document.getElementById('toolTipBox').style.display="block"; 
+    setTimeout("closeTT()", timeOut); 
+} 
+function closeTT() { 
+    document.getElementById('toolTipBox').style.display="none"; 
+} 
+function sloagan() {  
+   return 'HC4M is a product of <br> <a href="#11" name="11" onClick="openOOWin()">OntoOO</a>'; 
+} 
+function openOOWin() {  
+  open('http://www.ontooo.com', 'OntoOO'); 
+} 
+</script> 
+<table width="100%"> 
+<tr><td><img align="left" height="24" width="141" border="1" src="/hck/images/logo4.jpg" 
+        onClick="myAlert(30, 30, 3000, sloagan())" /></td> 
+<td align="left"> 
+<font color="#1C5540" size="4"> 
+<b>Welcome to Weight Management</b> 
+</font> 
+</td></tr> 
+</table> 
+ 
+<h3>Please provide today's weight:</h3> 
+<form method="post" action="/hck/servlet/patient.ProcessWeightValue"> 
+My weight is: <input type="text" size="5" maxlength="5" name="myWeight" value="" /> 
+<br /><hr /> 
+<input type="button" value="Submit" onClick="checkField(this.form)" /> 
+<input type="hidden" name="weightType" value="weight" /> 
+</form> 
+<script language="JavaScript"> document.forms[0].myWeight.focus(); </script> 
+ 
+<script language="JavaScript" src="/hck/kangel.js"> 
+</script> 
+ 
+</font> 
+</body > 
+</html> 

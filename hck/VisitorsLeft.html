@@ -1,0 +1,23 @@
+<HTML>
+<SCRIPT LANGUAGE='JavaScript'>
+j = 0;
+function white() { 
+     document.bgColor = 'white'; setTimeout("red()", 300); 
+}
+function red() { 
+    j++;
+    if ( 10 < j ) { 
+       parent.location = '/hck/servlet/cc.KCallPerson';
+    }
+    else {
+       document.bgColor = 'red'; setTimeout("white()", 300); 
+    }
+}
+</SCRIPT>
+<BODY BGCOLOR='red'>
+<SCRIPT LANGUAGE='JavaScript'>
+    setTimeout("white()", 300);
+</SCRIPT>
+
+</BODY>
+</HTML>

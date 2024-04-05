@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE vxml PUBLIC '-//Nuance/DTD VoiceXML 1.0//EN' 
+          'http://voicexml.nuance.com/dtd/nuancevoicexml-1-2.dtd'>
+<vxml version="2.0" xmlns="http://www.w3.org/2001/vxml" xml:lang="nl-NL">
+<!--
+ <property name="universals" value="all" /> 
+-->
+ <help>Sorry. Er is hier geen hulp beschikbaar.</help> 
+ <noinput>Sorry. Ik hoorde niets.
+   <reprompt/> 
+ </noinput> 
+ <nomatch>Dat begreep ik niet.
+   <reprompt/> 
+ </nomatch> 
+ <form id="form"> 
+   <field name="logName" type="digits?minlength=3;maxlength=3"> 
+      <prompt> 
+          Welkom bij deze medische advies lijn.
+	  Als u een levensbedreigende ziekte denkt te hebben 
+	  moet u meteen ophangen en hulp in roepen of naar de eerste
+	  hulp gaan.
+	  Dit is een experimenteel systeem.
+	  Login door drie cijfers in te toetsen.
+      </prompt> 
+   </field> 
+   <filled> 
+   <var name="myhost" expr="'bevocal'"/>
+   <submit 
+       next="http://www.healthcheck4me.info/hcknl/servlet/phone.PhoneLogin" 
+			   method="post" namelist="logName myhost" 
+			   fetchtimeout="60s"/> 
+   </filled> 
+ </form> 
+</vxml>

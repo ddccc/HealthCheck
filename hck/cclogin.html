@@ -1,0 +1,48 @@
+<html>
+<head><title>CC login</title>
+<link rel="shortcut icon" href="/hck/favicon.ico" type="image/x-icon" />
+</head>
+<script language="JavaScript">
+function checkFields(form) {
+	if ( ("" != form.logName.value) && ("" != form.password.value) )
+		form.submit();
+	else
+		alert("Enter values in both fields ...");
+}
+function checkSubmit(evt) {
+     var evt = (evt) ? evt : event;
+     var charCode = (evt.which) ? evt.which : evt.keyCode;
+     if ( 13 == charCode ) {
+        checkFields(document.forms[0]);
+	return false;
+     }
+     return true;
+}
+</script>
+<body bgcolor="lightblue">
+
+<h1 align="center">
+   <font color="FF0000" size="7">
+      Welcome to Health Angel CC 
+   </font>
+</h1>
+
+<h3> Please Login: </h3>
+
+<form method="post" action="/hck/servlet/cc.CCLogin">
+   Login name: <input type="text" size="10" name="logName" />
+   Password: <input type="password" size="10" name="password"
+   onKeyUp="checkSubmit(event)" /><p>
+
+<input type="button" value="Submit" onClick="checkFields(this.form)" />
+<input type="button" value="Cancel" onClick="history.back()" />
+
+</form>
+<script language="JavaScript"> document.forms[0].logName.focus(); </script>
+<hr>
+
+If you want to change your password, 
+<A href="/hck/servlet/users.ChangePassword0?user=cc">click here.</A>
+
+</body>
+</html>

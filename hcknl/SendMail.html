@@ -1,0 +1,37 @@
+<html> 
+<head> <title>Send Mail</title> 
+<link rel="stylesheet" type="text/css" href="/hcknl/hckStyle.css" /><link rel="shortcut icon" href="/hcknl/favicon.ico" type="image/x-icon" /></head> 
+<script language="JavaScript"> 
+function checkFields(form) { 
+	if ( "" != form.messageBody.value ) { 
+               form.submit(); 
+	} else 
+		alert("Why sending an empty message ??"); 
+} 
+</script> 
+<body> 
+<font color="#850a0a"> 
+ 
+<h1 align="center"> 
+   <font color="#1C5540" size="6"> 
+      Send Mail 
+   </font> 
+</h1> 
+ 
+<form method="get" action="/hcknl/servlet/misc.SendEmail" name="myForm"> 
+ 
+Your email address if you want an answer: 
+<input type="text" size="50" maxlength="50" name="emailAddress" /><p> 
+Your message:<br> 
+<textarea cols="75" rows="20" name="messageBody">
+</textarea><p> 
+ 
+<input type="button" value="Submit" onClick="checkFields(this.form)" /> 
+<input type="button" value="Back/Cancel" onClick="history.back()" /> 
+<input type="button" value="Home" onClick="location='/hcknl/index.html'" /> 
+<input type="hidden" name="subject" value="Site Feedback" />  
+<input type="hidden" name="test" value="YouAreIdiots7081943000079999999999999" />  
+</form> 
+</font> 
+</body> 
+</html> 

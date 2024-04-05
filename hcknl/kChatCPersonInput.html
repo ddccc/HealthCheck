@@ -1,0 +1,27 @@
+<html> 
+<body bgcolor="bbbbbb"> 
+<script language="JavaScript"> 
+function checkInput(form) { 
+        if ( '' ==  form.cpersonString.value )  
+		alert('Please provide input ...'); 
+	else 
+	        form.submit(); 
+} 
+function terminate(form) { 
+        form.cpersonString.value = '**CPersonTerminate**'; 
+        form.submit(); 
+} 
+</script> 
+ 
+<form action="/hcknl/servlet/cc.KChatCPersonInput"> 
+<input type="text" name="cpersonString" value="" size="80" maxlength="80" /> 
+<p> 
+<input type="button" value="Send to Client"  
+	onClick="checkInput(this.form)" /> 
+<input type="button" value="Terminate Chat Session/Cancel"  
+       onClick="terminate(this.form)" /> 
+</form> 
+<script language="JavaScript"> document.forms[0].cpersonString.focus(); </script> 
+ 
+</body> 
+</html> 

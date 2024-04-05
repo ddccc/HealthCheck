@@ -1,0 +1,58 @@
+File: c:/Users/Dennis/Desktop/TeleMedicine.txt
+Date: Sat Jun 23 17:36:26 2018
+(C) OntoOO/ Dennis de Champeaux
+
+
+Tele-medicine tool application project
+======================================
+
+Tele-medicine addresses the need for advice when a medical facility is
+not locally available.  Support using a web site can be a just a
+form of self-help or involve additional human assistance as we see
+these days with call-centers.  Our HealthCheck system can switch
+seamless from self-help to human assistance.  Expert assistance is
+offered in two versions:
+1.	real-time with a call-center and
+2.	delayed where the patient's physician is notified.  
+
+In all versions, the system does an interview by querying symptoms
+that is the basis for a "pre-diagnosis" (for lack of a better term) in
+the self-help version.  The system's interview can be taken over at
+any time by an attending physician in the call-center version.
+Call-center displays generate a notification when a life-threatening
+condition is conjectured.  Hence, unlike in a traditional call-center,
+the attending agent/physician can skip the initial querying of the
+patient.  Disease conjectures are created while the patient history is
+updated as well.
+
+Communication modalities are web browsers and the phone with
+speech recognition technology.  The latter modality is still a
+prototype version in contrast with the browser version which is
+online since around 2005.  The web version with human assistance
+through a call-center is online also since 2005, although without
+call-center personel.
+
+The project's goal is testing the adequacy of the call-center
+version.  Different test settings can be considered:
+- Users having access to an internet connection 
+- Users do not have access to the internet but there is a facility
+with internet access. Non internet-literate users would have to be
+assisted through an intermediary person.
+
+
+Some technical data of the HealthCheck system
+---------------------------------------------
+Site: www.healthcheck4me.info
+658 diseases
+928 symptoms
+236 locations
+102 body systems
+ 83 abnormal conditions
+153 external causes
+Localization is relatively easy.  Current there are English & Dutch
+versions. 
+One-on-one interaction with a call-center physician is now chat based
+and lacks speech & video; a parallel skype session would provide this
+functionality as a stop-gap solution.
+Porting to an (android) phone requires substantial modification of the
+GUI. 

@@ -1,0 +1,22 @@
+<HTML>
+<BODY BGCOLOR="khaki">
+
+<SCRIPT language="JavaScript">
+ret = document.cookie;
+idx = ret.indexOf("cookieTest");
+
+if ( idx < 0 ) {
+   parent.location = "/hck/noCookies.html";
+}  
+else {
+   expire = new Date (2000, 0, 1);
+   expireStr = expire.toGMTString();
+   document.cookie = "cookieTest" + "; expires=" + expireStr;
+   // parent.location = "/Angel.html";
+   parent.location = "/hck/servlet/htmls.Angel";
+}
+</SCRIPT>
+
+
+</BODY>
+</HTML>

@@ -1,0 +1,20 @@
+<!--
+body {background-color: khaki}
+.text12,.text16,.text20 {color: #850a0a}
+.text12 {font-size: 12pt}
+.text16 {font-size: 16pt}
+.text20 {font-size: 20pt}
+.fontGreenLarger {font-size: 40pt; color: green}
+.fontGreenLarge {font-size: 30pt; color: green}
+
+#toolTipBox {
+display: none;
+padding: 5;
+font-size: 12px;
+border: black solid 1px;
+font-family: verdana;
+position: absolute;
+background-color: #ffd038;
+color: 000000;
+}
+-->

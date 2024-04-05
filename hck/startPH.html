@@ -1,0 +1,72 @@
+<HTML>
+<HEAD><TITLE>Set up new PH</TITLE></HEAD>
+
+<script LANGUAGE='JavaScript'>
+function checkFields(form) {
+  if ("" == form.logName.value) { alert("Enter log name ..."); return; };
+  if ("" == form.password.value) { alert("Enter password ..."); return; };
+  if ("" == form.firstName.value) { alert("Enter first name ..."); return; };
+  if ("" == form.lastName.value) { alert("Enter last name ..."); return; };
+  if ("(nnn)nnn-nnnn" == form.phone.value) { alert("Enter phone# ..."); return; };
+  if ("" == form.email.value) { alert("Enter email address ..."); return; };
+
+  form.submit();
+
+}
+</script>
+
+<BODY BGCOLOR='bbbbbb'>
+
+<H1 align="center">
+   <FONT Color="FF0000" SIZE="7">
+      OK, Lets Setup a New PH Account
+   </FONT>
+</H1>
+
+<FORM METHOD="post" ACTION="/hck/servlet/su.SetupPH">
+<TABLE>
+<TR>
+  <TD><b>To access your data:</b></TD>
+</TR>
+<TR>
+   <TD>Identification:</TD>
+   <TD>
+       Login name: <INPUT TYPE="TEXTAREA" SIZE="10" NAME="logName">
+       Password: <INPUT TYPE="PASSWORD" SIZE="10" NAME="password">
+   </TD>
+</TR>
+<TR>
+  <TD><b>Administratrivia:</b></TD>
+</TR>
+<TR>
+   <TD>First Name:</TD>
+   <TD><INPUT TYPE="TEXTAREA" SIZE="30" NAME="firstName"></TD>
+</TR>
+<TR>
+   <TD>Last Name:</TD>
+   <TD><INPUT TYPE="TEXTAREA" SIZE="30" NAME="lastName"></TD>
+</TR>
+<TR>
+   <TD>Phone:</TD>
+   <TD><INPUT TYPE="TEXTAREA" SIZE="13" NAME="phone" VALUE="(nnn)nnn-nnnn"></TD>
+</TR>
+<TR>
+   <TD>Email:</TD>
+   <TD><INPUT TYPE="TEXTAREA" SIZE="40" NAME="email"></TD>
+</TR>
+
+</TABLE>
+
+
+<hr>
+Please check all fields before submitting: 
+<input TYPE="button" VALUE="Submit" onClick="checkFields(this.form)">
+</FORM>
+<SCRIPT LANGUAGE='JavaScript'> document.forms[0].logName.focus(); </SCRIPT>
+
+</BODY>
+</HTML>
+
+
+
+

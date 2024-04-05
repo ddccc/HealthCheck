@@ -1,0 +1,77 @@
+<html> 
+<head><title>HELP</title> 
+<link rel="stylesheet" type="text/css" href="/hck/hckStyle.css" /><link rel="shortcut icon" href="/hck/favicon.ico" type="image/x-icon" /></head> 
+ 
+<body> 
+ 
+<font color="#1C5540"> 
+<h1>HELP</h1> 
+</font> 
+ 
+<font color="#850a0a" size="4"> 
+ 
+<p><b>Problem:</b> 
+<i>I have trouble with creating an anonymous account.</i> 
+<br /><b>A:</b>  
+Sorry for that.  Here an example:<br /> 
+- Click on the link: First time visitor: Create first an anonymous account<br /> 
+- Type in, for example: name23<br /> 
+- This creates the account name23 with password name23<br /> 
+- Proceed with the setup using name23 and name23<br /> 
+- When the setup is completed login with name23 and name23<br /> 
+Yes, you can also change your password. 
+ 
+<p><b>Problem:</b> 
+<i>I cannot login.</i> 
+<br /><b>A:</b>  
+Did you create first an anonymous account?<br /> 
+If not:<a href="/hck/servlet/su.CreateAnonymousAccount"> 
+Create an anonymous account</a> 
+ 
+<p><b>Problem:</b> 
+<i>I forgot my password.</i> 
+<br /><b>A:</b>  
+If you are willing to disclose your email address then provide also your user name and describe when you created the account, how many sessions you think you had and things that you entered when you setup the account and send this to: 
+<a href="/hck/SendMail.html"> 
+ask for my password. 
+</a> <br /> 
+Otherwise just create another account - with a different user name of course. 
+ 
+<p><b>Problem:</b> 
+<i>I get a pink page that tells me that I cannot login twice.</i> 
+<br /><b>A:</b>  
+That's right. There are several possibilities:<br /> 
+-- You interrupted the setup of your account and went to another site. Try: 
+<a href="/hck/killSession.html">kill session</a> and do a login, 
+which will restart the account setup process.<br /> 
+-- You are logged in with the <i>same browser</i> as yourself or as another user. 
+If you are already logged in as yourself, why logging in again?  You cannot.  If you are logged in as another user, logout first.<br /> 
+-- You are logged in with <i>another browser.</i> Well, you cannot and why login twice in the first place?<br /> 
+-- You are logged in on <i>another machine.</i> Logout first.  You are at home and the other machine is at work?  Try: 
+<a href="/hck/killSession.html"> kill session</a> 
+or you will be logged out when the server reboots: 12 noon and midnight PST.<br /> 
+-- Someone else is using your account. Try: 
+<a href="/hck/killSession.html"> kill session</a> 
+and change your password as soon as you can login again.<br /> 
+-- Hmmm.  You mean the previous five cases do not apply? Sorry to hear that.  Please let us know how you got in this pickle:<br /> 
+<a href="/hck/SendMail.html"> 
+yeah, there is something else happening ... 
+</a> 
+ 
+<p><b>Problem:</b> 
+<i>I have another problem.</i> 
+<br /><b>A:</b>  
+Sorry to hear that.  Please let us know: 
+<a href="/hck/SendMail.html"> 
+yes, I have another problem ... 
+</a> 
+ 
+ 
+<form> 
+<input type="button" value="Back" onClick="history.back()" />  
+<input type="button" value="Home" onClick="location='/hck/index.html'" /> 
+</form> 
+ 
+</font> 
+</body> 
+</html> 

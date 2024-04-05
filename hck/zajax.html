@@ -1,0 +1,36 @@
+<html>
+<head>
+   <title>
+      ajax example
+   </title>
+</head>
+<script language="JavaScript">
+function again() {
+    // alert("Passing through");
+    getValue();
+    setTimeout("again()", 2000);
+}
+function getValue() {
+     var url = "/hck/servlet/com.ZAjax";
+     req = new XMLHttpRequest();
+     req.open("Get", url, true);
+     req.onreadystatechange = callback;
+     req.send(null);
+}
+function callback() {
+     if ( 4==req.readyState ) {
+        if ( 200==req.status ) {
+           var cnt = document.getElementById('cnt');
+	   cnt.value = req.responseText;
+        }
+     }
+
+}
+</script>
+<BODY BGCOLOR="bbbbbb" onLoad='again()'>
+
+<H3> Testing Ajax/ XMLHttpRequest() in browsers </H3>
+<input type="text" readonly id="cnt">
+
+</BODY>
+</html>

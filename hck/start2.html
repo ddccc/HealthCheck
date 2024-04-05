@@ -1,0 +1,92 @@
+<HTML> 
+<HEAD> 
+   <TITLE> 
+Set up new user 2 
+   </TITLE> 
+</HEAD> 
+ 
+<BODY BGCOLOR='khaki'> 
+<font Color='#850a0a'> 
+ 
+<H1 align=center> 
+   <FONT Color='#1C5540' SIZE=4> 
+OK, Here the 2nd Set of Questions 
+   </FONT> 
+</H1> 
+ 
+<FORM METHOD=post ACTION='/hck/servlet/patient.Setup2'> 
+<TABLE> 
+<TR> 
+  <TD><b>Life style:</b></TD> 
+</TR> 
+<TR> 
+  <TD>Marital Status:</TD> 
+  <TD>  
+       <SELECT NAME='maritalStatus'> 
+           <OPTION VALUE='single' SELECTED>single 
+           <OPTION VALUE='marriedOK'>married OK 
+           <OPTION VALUE='marriedNotOK'>married not OK 
+           <OPTION VALUE='remarried'>remarried 
+           <OPTION VALUE='separated'>separated 
+           <OPTION VALUE='divorced'>divorced 
+           <OPTION VALUE='widow(er)'>widow(er) 
+       </SELECT>    
+  </TD> 
+</TR> 
+<TR> 
+  <TD>Smoking?</TD> 
+  <TD>  
+       <SELECT NAME='smoking'> 
+           <OPTION VALUE='none' SELECTED>none 
+           <OPTION VALUE='lessThanOnePackDay'>less than one pack a day 
+           <OPTION VALUE='onePackDay'>one pack a day 
+           <OPTION VALUE='twoPackDay'>two pack a day 
+           <OPTION VALUE='moreThanTwoPackDay'>more than two pack a day 
+       </SELECT>    
+  </TD> 
+</TR> 
+<TR> 
+  <TD>Alcohol?</TD> 
+  <TD>  
+       <SELECT NAME='alcohol'> 
+           <OPTION VALUE='never' SELECTED>never 
+           <OPTION VALUE='infrequent'>infrequent 
+           <OPTION VALUE='frequent'>frequent 
+           <OPTION VALUE='daily'>daily 
+       </SELECT>    
+  </TD> 
+</TR> 
+<TR> 
+  <TD>Exercising? </TD> 
+  <TD>  
+       <SELECT NAME='exercising'> 
+           <OPTION VALUE='never' SELECTED>never 
+           <OPTION VALUE='infrequent'>infrequent 
+           <OPTION VALUE='frequent'>frequent 
+           <OPTION VALUE='daily'>daily 
+       </SELECT>    
+  </TD> 
+</TR> 
+<TR> 
+  <TD>Sources of Tension and Worries:</TD> 
+  <TD>  
+       <INPUT TYPE='CHECKBOX' NAME='stress' VALUE='job'>job 
+       <INPUT TYPE='CHECKBOX' NAME='stress' VALUE='spouse'>spouse 
+       <INPUT TYPE='CHECKBOX' NAME='stress' VALUE='finances'>finances 
+       <INPUT TYPE='CHECKBOX' NAME='stress' VALUE='religion'>religion 
+       <INPUT TYPE='CHECKBOX' NAME='stress' VALUE='colleages'>fellow employees 
+       <INPUT TYPE='CHECKBOX' NAME='stress' VALUE='drugs'>drugs 
+       <INPUT TYPE='CHECKBOX' NAME='stress' VALUE='alcohol'>alcohol 
+  </TD> 
+</TR> 
+ 
+</TABLE> 
+ 
+<hr> 
+Please check your data before submitting!  
+<input TYPE='SUBMIT' VALUE='Submit'> 
+</FORM> 
+ 
+</font> 
+</BODY> 
+</HTML> 
