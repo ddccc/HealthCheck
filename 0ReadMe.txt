@@ -11,7 +11,7 @@ project involving AI agents.
 
 A version must be added to a tomcat web server in its webapps
 directory.
-The file j2ee.jar goes into the lib directory - may be it is included
+The file j2ee.jar goes into the lib directory - maybe it is included
 these days in the JDK.
 Java compilation uses a JDK.
 Scripts assume running on a window box; they need adjustments for linux.
@@ -61,8 +61,8 @@ There are tools to edit the medical data files in the directory
    hck/WEB-INF/classes/edit
 Here how to access it:
    http://localhost:8080/hck/servlet/edit.EditAny
-There are numerous tools to show the content of the med files, which
-helps to get a grip on the med ontology.
+There are also numerous tools to show the content of the med files,
+which helps to get a grip on the med ontology.
 
 See also in /hck the files:
 0ReadMe.txt for how the callcenter is monitoring users.
